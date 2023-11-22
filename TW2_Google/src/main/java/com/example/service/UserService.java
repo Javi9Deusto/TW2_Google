@@ -23,7 +23,7 @@ public class UserService {
         return userRepository.findAll();
     }
 	public UserServiceResult registerUser(User user) {
-		Optional<User> result = userRepository.findByEmailAndPassword(user.getEmail(),user.getPassword());
+		Optional<User> result = userRepository.findByEmail(user.getEmail());
 		
 		if (result.isEmpty()) {
 			User savedUser = userRepository.save(user);
@@ -36,7 +36,11 @@ public class UserService {
 		return UserServiceResult.FAIL;
 	}
 	public Optional<User> checkEmail(String Email, String password) {
-		return userRepository.findByEmailAndPassword(Email,password);
+		Optional<User> user = userRepository.findByEmail(Email);
+        if(user.get().getPassword().equals(password)) {
+        	return user;
+        }
+        return null;
     }
 	
 }
