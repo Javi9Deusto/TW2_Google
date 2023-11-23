@@ -42,14 +42,14 @@ public class UserController {
     }
             
     @PostMapping("/user/create")
-    public ResponseEntity<Object> createUser(@RequestBody User user) {
+    public User createUser(@RequestBody User user) {
     	log.info("Creating a new User ...");
        	switch (userService.createUser(user)) {
        		case FAIL:
-    	    	return ResponseEntity.unprocessableEntity().body("User Creation Failed; User exists and/or Operation aborted");
+    	    	return null;
 
       	    default:
-      	    	return ResponseEntity.ok("Successfully created User");	
+      	    	return userService.getUserByEmailAndPassword(user.getEmail(), user.getPassword());	
     	}
     }
 }
