@@ -34,15 +34,13 @@ public class Tw2GoogleV2Application {
       return (args) -> {
           // INIT data ... some Users
     	    	  
-    	  User veronica = new User ("veronica@gmail.es", "1234");
-    	  User mercedes = new User ("mercedes@gmail.es", "123456");
-    	  User macarena = new User ("macarena@gmail.es", "1234567");
-    	  User joseMiguel = new User ("josemiguel@gmail.es", "12345678");
+    	  User alejandro = new User ("alejandro@gmail.com", "12345");
+    	  User lucia = new User ("lucia@gmail.com", "123456");
+    	  User maria = new User ("maria@gmail.com", "1234567");
     	   
-    	  repository.save(veronica);
-    	  repository.save(mercedes);
-    	  repository.save(macarena);
-    	  repository.save(joseMiguel);
+    	  repository.save(alejandro);
+    	  repository.save(lucia);
+    	  repository.save(maria);
     	  
         log.info("Sample users created"); 
     	  
