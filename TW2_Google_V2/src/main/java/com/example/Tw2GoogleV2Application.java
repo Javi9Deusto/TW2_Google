@@ -37,11 +37,11 @@ public class Tw2GoogleV2Application {
     	  User alejandro = new User ("alejandro@gmail.com", "12345");
     	  User lucia = new User ("lucia@gmail.com", "123456");
     	  User maria = new User ("maria@gmail.com", "1234567");
-    	   
+    	  User andoni = new User("andoni@gmail.com","1111"); 
     	  repository.save(alejandro);
     	  repository.save(lucia);
     	  repository.save(maria);
-    	  
+    	  repository.save(andoni);
         log.info("Sample users created"); 
     	  
     	log.info("USER Services AVAILABLE ...");
